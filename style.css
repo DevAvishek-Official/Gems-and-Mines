@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: arial;
+    background-color: #1a2c38;
+    height: 100vh;
+    align-content: center;
+}
+
+.main-container{
+    margin: 0 auto;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-color: #213743;
+    border-radius: 10px;
+}
+
+.controls{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+
+}
+
+.amount-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.amount-input label{
+    font-size: 17px;
+    color: white;
+}
+
+.amount-input input{
+    font-size: 17px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: #071824;
+    color: white;
+    border: 1px solid #2f4553;  
+}
+
+.mine-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mine-input label{
+    font-size: 17px;
+    color: white;
+}
+
+.mine-input select{
+    width: 100%;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: #071824;
+    color: white;
+    border: 1px solid #2f4553;
+}
+
+.bet-btn{
+    width: 100%;
+}
+
+.bet-btn button{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #00e701;
+    color: #071824;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.bet-btn button:hover{
+    background-color: #1fff20;
+}
+
+.game-container{
+    margin: 0 auto;
+    padding: 10px 150px;
+    border-radius: 0 10px 10px 0;
+    background-color: #0f212e;
+}
+
+.grid{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: #0f212e;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    background-color: #2f4553;
+    border-radius: 10px;
+    border-bottom: 5px solid #213743;
+    cursor: pointer;
+    animation: appear 0.2s linear;
+}
+
+.cell.mine{
+    background-color: #071824;
+    border: none;
+    pointer-events: none;
+}
+
+.cell.mine img{
+    width: 50px;
+    height: 50px;
+    opacity: 0.3;
+    animation: appear 0.2s linear;
+}
+
+.cell.gem{
+    background-color: #071824;
+    border: none;
+    pointer-events: none;
+}
+
+.cell.gem img{
+    width: 50px;
+    height: 50px;
+    opacity: 0.3;
+    animation: appear 0.2s linear;
+}
+
+.cell:hover{
+    background-color: #557086;
+    transform: translateY(-3%);
+    transition: 0.05s ease-in-out;
+}
+
+.cell:active{
+    background-color: #557086;
+    transform: translateY(3%);
+    transition: 1s;
+}
+
+.cell.fetching,
+.cell.fetching{
+    animation: blinker 0.5s infinite;
+    pointer-events: none;
+}
+
+@keyframes blinker {
+    from { 
+        opacity: 1;
+        scale: 1;
+    }
+    50% { 
+        opacity: 0.5; 
+        scale: 1.05;
+    }
+    to { 
+        opacity: 1.0; 
+        scale: 1.0;
+    }
+}
+
+@keyframes appear{
+    from { 
+        opacity: 0;
+        scale: 0;
+    }
+    to { 
+        opacity: 1; 
+        scale: 1;
+    }
+}
