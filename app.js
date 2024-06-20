@@ -12,7 +12,6 @@ function defaultGame() {
     grid = initializeGrid(gridSize);
     placeMines(grid, mineCount);
     displayGrid(grid);
-    console.log(grid);
 }
 
 function startGame() {
